@@ -1,0 +1,444 @@
+//color
+$primary-blue: #2761bd;
+$primary-grey: #d9d9d9;
+$white: #ffffff;
+
+//fontsize
+$mobile-h0-fontsize: 40px;
+$mobile-h1-fontsize: 30px;
+$mobile-h2-fontsize: 20px;
+$mobile-h3-fontsize: 15px;
+$mobile-h4-fontsize: 12px;
+
+//box-shadow:
+$btn-box-shadow: 2px 2px 7px 2px lightgrey;
+
+.background-container {
+  width: 390px;
+  height: 844px;
+  background-color: $primary-blue;
+  display: flex;
+  flex-direction: column;
+}
+
+//BigHeaderLayout 版型1
+.big-layout-upper-section {
+  height: 255px;
+}
+
+.upper-section-navigation {
+  height: 72px;
+  display: flex;
+}
+
+.upper-section-textarea {
+  color: $white;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.big-layout-lower-section{
+  height: 589px;
+  background-color: $white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: inset 0 0 10px lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+//smallHeaderLayout 版型2
+.background-container {
+  width: 390px;
+  height: 844px;
+  background-color: $primary-blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-layout-upper-section{
+  height: 72px;
+}
+
+.small-layout-lower-section{
+  height: 772px;
+  background-color: $white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: inset 0 0 10px lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+//Header 版型1 & 版型2共用
+.website-Logo-Icon {
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+//UpperSectionText
+.upper-section-textarea {
+  color: $white;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.upper-section-textarea-hi {
+  font-size: $mobile-h1-fontsize;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.upper-section-textarea-text {
+  font-size: $mobile-h2-fontsize;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+//Small-lower-Layout
+.Small-lower-section-top-area {
+  font-size: $mobile-h3-fontsize;
+  color: $primary-blue;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+.Small-lower-section-middle-area{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 30px;
+}
+
+.Small-lower-section-button-area {
+  margin-top: 50px;
+}
+
+//Lower-Section-Item-H3-text
+.font-size-h3-text {
+  font-size: $mobile-h3-fontsize;
+  color: $primary-blue;
+  margin-top: 40px;
+}
+
+//FourGridImage
+.cancer1-img,
+.cancer2-img,
+.cancer3-img,
+.cancer4-img {
+  width: 154px;
+  height: 154px;
+  margin: 3px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 7px 1px lightgrey;
+}
+
+//LetGoBtn
+.letGoBtn {
+  width: 332px;
+  height: 50px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: $mobile-h2-fontsize;
+  background-color: #2761bd;
+  color: $white;
+  box-shadow: $btn-box-shadow;
+}
+
+//ProgressBar
+.lower-section-progress-bar-area {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+//formPage- lowerSection
+
+.formFormat{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+//range slider
+.ageSlider {
+  -webkit-appearance: none;
+  width: 225%;
+  height: 33px;
+  background-color: $primary-grey;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  border-radius: 15px;
+}
+
+.ageSlider:hover {
+  opacity: 1;
+}
+
+.ageSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 45px;
+  background: $primary-blue;
+  cursor: pointer;
+}
+
+.ageSlider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: $primary-blue;
+  border-radius: 45px;
+  cursor: pointer;
+}
+
+#ageOutput {
+  color: $primary-blue;
+}
+
+.lower-section-progress-bar-area {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.lower-section-button-area {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.question-1,
+.question-2{
+  padding-left: 30px;
+  font-size:$mobile-h2-fontsize;
+}
+
+.question-1-question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.question-2 {
+  margin-top: 50px;
+}
+
+.question-2-question{
+  display: flex;
+}
+
+.question-2-answer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.question-2-answer{
+  margin-bottom: 36px;
+}
+
+input[type="radio"]:checked+label .gender-answer-pic {
+  border: 3px solid $primary-blue;
+  border-radius: 15px;
+  box-shadow: 0.6px 1px 7px 6px #ccc;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
+
+.checkBtn {
+  width: 332px;
+  height: 50px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: $mobile-h2-fontsize;
+  background-color: #2761bd;
+  color: $white;
+  box-shadow: $btn-box-shadow;
+  margin-left: 30px;
+}
+
+//ResultPage
+
+.lower-section-result-area-text{
+  font-size: $mobile-h2-fontsize;
+  color:$primary-blue;
+}
+
+.lower-section-result-area-four-box {
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.cancer1,
+.cancer2,
+.cancer3,
+.cancer4 {
+  &.checked {
+    border: 3px solid $primary-blue;
+    border-radius: 15px;
+    box-shadow: 0.6px 1px 7px 6px #ccc;
+  }
+}
+
+.NearByBtn{
+  width: 332px;
+    height: 50px;
+    border: 0px;
+    border-radius: 10px;
+    font-size: $mobile-h2-fontsize;
+    background-color: #2761bd;
+    color: $white;
+    box-shadow: $btn-box-shadow;
+}
+
+//PopupModal
+.cover-image {
+  position: absolute;
+  height: 844px;
+  width: 390px;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 2;
+  display: block;
+}
+
+.pop-up-message {
+  position: absolute;
+  top: 250px;
+  left: 60px;
+  color: black;
+  background-color: white;
+  width: 317px;
+  height: 292px;
+  border: 5px solid $primary-blue;
+  border-radius: 15px;
+  z-index: 5;
+  display: block;
+}
+
+.pop-up-message-text {
+  margin-top: 100px;
+  font-size: $mobile-h2-fontsize;
+  color: $primary-blue;
+}
+
+.agreePermissionBtn {
+  width: 250px;
+  height: 40px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: $mobile-h3-fontsize;
+  background-color: #2761bd;
+  color: $white;
+  box-shadow: $btn-box-shadow;
+}
+
+.notAgreePermissionBtn {
+  margin-top: 10px;
+  width: 250px;
+  height: 40px;
+  border: 0px;
+  font-size: $mobile-h3-fontsize;
+  color: $primary-grey;
+}
+
+.loadingGIF{
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+//NearByPage
+.nearByHospital-text {
+  position: static;
+  color: $primary-blue;
+}
+
+.googleMapIframe {
+  width: 90%;
+  height: 250px;
+  background-color: grey;
+  margin-left: 0px;
+}
+
+.nearByHospital-detail {
+  height: 458px;
+  overflow: scroll;
+}
+
+.nearByHospital-detail-card {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ececec;
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.hosptialName {
+  font-size: $mobile-h2-fontsize;
+  color: $primary-blue;
+  margin-bottom: 5px;
+}
+
+.hosptialPhone,
+.hosptialAddress {
+  font-size: $mobile-h3-fontsize;
+  color: $primary-blue;
+  margin-top: 3px;
+}
+
+.healthCheckServiceTage {
+  font-size: $mobile-h4-fontsize;
+  color: white;
+  background-color: $primary-blue;
+  border-radius: 45px;
+  width: 90px;
+  margin-top: 3px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.healthCheckService {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 15px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.cancer-1,
+.cancer-2,
+.cancer-3,
+.cancer-4 {
+  font-size: $mobile-h4-fontsize;
+  color: $primary-blue;
+  margin: 3px;
+}
+
+.cancer-1-provided,
+.cancer-2-provided,
+.cancer-3-provided,
+.cancer-4-provided {
+  font-size: $mobile-h4-fontsize;
+  color: dark-grey;
+  margin: 3px;
+}
