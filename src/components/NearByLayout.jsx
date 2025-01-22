@@ -7,7 +7,7 @@ export const NearByLayout = ({ upperNavigation, TitleAndMapArea, DetailCardArea}
         </div>
       </div>
 
-      <div className="small-layout-lower-section">
+      <div className="small-layout-lower-section-map">
         <div className="nearByHospital-text">
           {TitleAndMapArea}
         </div>

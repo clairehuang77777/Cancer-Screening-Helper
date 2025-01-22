@@ -5,6 +5,7 @@ import axios from "axios"
 import { UserAddressContext } from "../../UserAddressContext"
 import { UserLatContext } from "../../UserLatContext"
 import { UserLngContext } from "../../UserLngContext"
+import clsx from "clsx"
 
 export const PopupModal = () => {
   const {showPopUp, setShowPopUp} = useContext(PopUpContext)
@@ -80,8 +81,8 @@ export const PopupModal = () => {
     </div>
     <div className="pop-up-message">
       <form action="">
-        {loading ? (<img className="loadingGIF" src="./loading.gif"></img>) : (<p className="pop-up-message-text">允許取得你的位置</p>)} 
-        <button type="submit" className="agreePermissionBtn" onClick={handleAgreeClick}>同意</button><br></br>
+        {loading ? (<img className="loadingGIF" src="./loading.gif"></img>) : (<p className="pop-up-message-text">允許取得你的位置</p>)}
+        <button type="submit" className={clsx("agreePermissionBtn",{ clicked:loading })} onClick={handleAgreeClick}>{loading? "載入中" : "同意"}</button><br></br>
         <button type="submit" className="notAgreePermissionBtn" onClick={()=>setShowPopUp(false)}>下次再說</button>
       </form>
     </div>

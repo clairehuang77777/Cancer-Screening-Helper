@@ -62,7 +62,7 @@ export const TitleAndMap = ({district}) => {
   return (
     <div>
       <h3>{district}附近可篩檢的診所：</h3>
-      <div id="map" style={{ height: "300px", width: "100%" }}></div>
+      <div id="map"></div>
     </div>
   );
 };

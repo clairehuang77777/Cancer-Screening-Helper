@@ -1,5 +1,5 @@
 export const ProgressBar = () => {
   return (
-    <img src="/progressbar.png"></img>
+    <img className="progress-bar-start"></img>
   )
 }

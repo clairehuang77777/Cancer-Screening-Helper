@@ -48,13 +48,17 @@ export const QualifyResult = () => {
   return (
     <>
     <div className="lower-section-result-area-text">
-        以您的年齡及性別，<br></br>你能做的癌症篩檢項目為：
+        以您的年齡及性別，你能做的癌症篩檢項目為：
     </div>
       <div className="lower-section-result-area-four-box">
-        <img className={clsx("cancer1", {checked: oralCancer})} src="https://res.cloudinary.com/daxegohhe/image/upload/v1736915432/%E5%8F%A3%E8%85%94_rymq53.png"></img>
-        <img className={clsx("cancer2", {checked: breastCancer})} src="https://res.cloudinary.com/daxegohhe/image/upload/v1736915432/%E4%B9%B3%E7%99%8C_jjqf5a.png"></img>
-        <img className={clsx("cancer3", {checked: cervixCancer})} src="https://res.cloudinary.com/daxegohhe/image/upload/v1736915432/%E5%AD%90%E5%AE%AE_imu2vx.png"></img>
-        <img className={clsx("cancer4", {checked: colonCancer})} src="https://res.cloudinary.com/daxegohhe/image/upload/v1736915432/%E5%A4%A7%E8%85%B8%E7%99%8C_r7ndhm.png"></img>
+        {/* {oralCancer? <img className="checkicon1" src="/checkicon.png"></img>:<></>} */}
+        <img className={clsx("cancer1", {checked: oralCancer})} src="/cancer1.png"></img>
+        {/* {breastCancer? <img className="checkicon2" src="/checkicon.png"></img>:<></>} */}
+        <img className={clsx("cancer2", {checked: breastCancer})} src="/cancer2.png"></img>
+        {/* {cervixCancer? <img className="checkicon3" src="/checkicon.png"></img>:<></>} */}
+        <img className={clsx("cancer3", {checked: cervixCancer})} src="/cancer3.png"></img>
+        {/* {colonCancer? <img className="checkicon4" src="/checkicon.png"></img>:<></>} */}
+        <img className={clsx("cancer4", {checked: colonCancer})} src="/cancer4.png"></img>
       </div>
       <button className="NearByBtn" type="submit" 
       onClick={()=>setShowPopUp(true)}>查看鄰近醫院 </button>
