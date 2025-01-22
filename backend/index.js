@@ -3,13 +3,18 @@ const app = express()
 const port = 4003
 const axios = require('axios');
 const cors = require('cors');
+const dotenv = require('dotenv')
 
-const apiKey = "AIzaSyAHXg8iyfRi6rYFMn6eBK42TRd5_GjT4TM"
+
 
 const hospitalData = require('../src/assets/data/hospitalData.json')
 
 app.use(cors())
 app.use(express.json())//可以解析json
+dotenv.config()
+
+const apiKey = process.env.apiKey
+console.log(apiKey)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
