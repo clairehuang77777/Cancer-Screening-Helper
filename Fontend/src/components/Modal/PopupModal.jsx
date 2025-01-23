@@ -15,7 +15,7 @@ export const PopupModal = () => {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   
-
+ 
 
   //使用用戶打開的瀏覽器原生提供的webapi, 取得用戶經緯度位置
   const getCurrentPosition = () => {
@@ -59,6 +59,10 @@ export const PopupModal = () => {
     }) 
   }
 
+  const determineUserCity = ({userAddress}) =>{
+    const city = userAddress.split('市')[0]
+    return city
+  }
 
   const handleAgreeClick = async (event) => {
     event.preventDefault();
@@ -66,7 +70,14 @@ export const PopupModal = () => {
     try {
       const userAddress = await getCurrentPosition()
       console.log(userAddress)
-      navigate('/NearByPage')
+      const userCity = determineUserCity(userAddress)
+      console.log("使用者城市是", userCity)
+
+      if (userCity === "台中" || userCity === "臺中"){
+        navigate('/NearByPage')
+      } else {
+        navigate('/NotSupportingPage')
+      }
     } catch(error){
       console.error(error)
     } finally {

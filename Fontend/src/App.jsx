@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { UserAddressContext } from './UserAddressContext'
 import { UserLngContext } from './UserLngContext'
 import { UserLatContext } from './UserLatContext'
+import { NotSupportingPage } from './page/NotSupportingPage'
 
 function App() {
 const [type, SetType] = useState('')
@@ -29,6 +30,7 @@ const [UserLat, SetUserLat] = useState('')
             <Route path="/formPage" element={<FormPage/>}></Route>
             <Route path="/ResultPage" element={<ResultPage/>}></Route>
             <Route path="/NearByPage" element={<NearByPage/>}></Route>
+            <Route path="/NotSupportingPage" element={<NotSupportingPage/>}></Route>
         </Routes>
       </BrowserRouter>
     </UserLatContext.Provider>
