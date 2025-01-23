@@ -238,12 +238,14 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 }
 
 .question-1-question {
+  color:black;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .question-2 {
+  color: black;
   margin-top: 50px;
 }
 
@@ -525,7 +527,7 @@ input[type="radio"] {
   height: 40px;
   border: 0px;
   font-size: $mobile-h3-fontsize;
-  color: $primary-grey;
+  background-color: $primary-grey;
 }
 
 .loadingGIF{
