@@ -101,7 +101,8 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
   font-size: $mobile-h1-fontsize;
   display: flex;
   justify-content: flex-start;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .upper-section-textarea-text {
@@ -286,6 +287,8 @@ input[type="radio"] {
 .lower-section-result-area-text{
   font-size: $mobile-h2-fontsize;
   color:$primary-blue;
+  margin: 0 auto;
+  width: 250px;
 }
 
 .lower-section-result-area-four-box {
@@ -305,6 +308,7 @@ input[type="radio"] {
     border: 3px solid $primary-blue;
     border-radius: 15px;
     box-shadow: 0.6px 1px 7px 6px #ccc;
+    margin-right: 6px;
   }
 }
 
@@ -326,6 +330,145 @@ input[type="radio"] {
   width: 325px;
 }
 
+//loading animation
+
+.loading{
+  margin-top: 100px;
+}
+
+.bubblingG {
+  text-align: center;
+  // width: 400px;
+  height: 60px;
+  margin: auto;
+}
+
+.bubblingG span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  margin: 24px auto;
+  background: rgb(92, 147, 230);
+  border-radius: 49px;
+  -o-border-radius: 49px;
+  -ms-border-radius: 49px;
+  -webkit-border-radius: 49px;
+  -moz-border-radius: 49px;
+  animation: bubblingG 1.5s infinite alternate;
+  -o-animation: bubblingG 1.5s infinite alternate;
+  -ms-animation: bubblingG 1.5s infinite alternate;
+  -webkit-animation: bubblingG 1.5s infinite alternate;
+  -moz-animation: bubblingG 1.5s infinite alternate;
+}
+
+#bubblingG_1 {
+  animation-delay: 0s;
+  -o-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+}
+
+#bubblingG_2 {
+  animation-delay: 0.45s;
+  -o-animation-delay: 0.45s;
+  -ms-animation-delay: 0.45s;
+  -webkit-animation-delay: 0.45s;
+  -moz-animation-delay: 0.45s;
+}
+
+#bubblingG_3 {
+  animation-delay: 0.9s;
+  -o-animation-delay: 0.9s;
+  -ms-animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+}
+
+
+
+@keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(45, 91, 181);
+    transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-20px);
+  }
+}
+
+@-o-keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(45, 91, 181);
+    -o-transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: rgb(255, 255, 255);
+    -o-transform: translateY(-20px);
+  }
+}
+
+@-ms-keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(45, 91, 181);
+    -ms-transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: rgb(255, 255, 255);
+    -ms-transform: translateY(-20px);
+  }
+}
+
+@-webkit-keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(45, 91, 181);
+    -webkit-transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: rgb(255, 255, 255);
+    -webkit-transform: translateY(-20px);
+  }
+}
+
+@-moz-keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(45, 91, 181);
+    -moz-transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: rgb(255, 255, 255);
+    -moz-transform: translateY(-20px);
+  }
+}
+
+
 //PopupModal
 .cover-image {
   position: absolute;
@@ -335,12 +478,16 @@ input[type="radio"] {
   opacity: 0.9;
   z-index: 2;
   display: block;
+  
 }
 
 .pop-up-message {
   position: absolute;
   top: 250px;
-  left: 20px;
+  left: 50%;
+    /* 定位到整個畫面的 50% */
+    transform: translateX(-50%);
+    /* 將元素的寬度往左移一半，實現居中 */
   color: black;
   background-color: white;
   width: 317px;
@@ -418,6 +565,7 @@ input[type="radio"] {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  box-shadow: 2px 3px 2px $primary-grey
 }
 
 .hosptialName {
@@ -474,11 +622,30 @@ input[type="radio"] {
 }
 
 .progress-bar-start {
-  background-image: url("/progressbar.png");
+  background-image: url("/progress@3x.png");
+  width:325px;
+  height: 55px;
+  background-size: 325px 55px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 18px;
+  /* 如果需要圓角 */
+  background-clip: padding-box;
+  /* 限制背景裁剪到圓角內 */
 }
 
+
 .progress-bar-end {
-  background-image: url("/progressbar2.png");
+  background-image: url("/progressEnd@3x.png");
+  width: 325px;
+  height: 55px;
+  background-size: 325px 55px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 18px;
+  /* 如果需要圓角 */
+  background-clip: padding-box;
+  /* 限制背景裁剪到圓角內 */
 }
 
 #map{
@@ -529,17 +696,29 @@ input[type="radio"] {
   }
 
   .progress-bar-start{
-    background-image: url("/public/progressbar1-big3.png");
+    background-image: url("/bigProgress@3x.png");
     width:921px;
     height: 68px;
-    border:1px solid white;
+    background-size: 921px 68px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+      /* 如果需要圓角 */
+    background-clip: padding-box;
+      /* 限制背景裁剪到圓角內 */
   }
 
   .progress-bar-end{
-    background-image: url("/public/progressbar2-big3.png");
+    background-image: url("/bigProgressEnd@3x.png");
     width: 921px;
     height: 68px;
-    border: 1px solid white;;
+    background-size: 921px 68px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+      /* 如果需要圓角 */
+    background-clip: padding-box;
+      /* 限制背景裁剪到圓角內 */
   }
 
   .ageSlider{
@@ -551,8 +730,9 @@ input[type="radio"] {
   }
 
   .lower-section-result-area-text{
-    font-size:$mobile-h3-fontsize;
-    margin: 10px 40px;
+    font-size:$mobile-h2-fontsize;
+    margin: auto 0;
+    width: 500px;
   }
 
   .cancer1.checked,
@@ -578,7 +758,10 @@ input[type="radio"] {
     width: 600px;
     height: 350px;
     top: 250px;
-    left: 500px;
+    left: 50%;
+      /* 定位到整個畫面的 50% */
+      transform: translateX(-50%);
+      /* 將元素的寬度往左移一半，實現居中 */
   }
   
   .pop-up-message-text{
