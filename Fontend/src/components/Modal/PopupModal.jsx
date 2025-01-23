@@ -28,7 +28,7 @@ export const PopupModal = () => {
               SetUserLat(userPosition.latitude)
               SetUserLng(userPosition.longitude)
               axios
-                .post('http://localhost:4003/api/location',{
+                .post('https://cancer-screening-helper.onrender.com/api/location',{
                 userLat: userPosition.latitude,
                 userLng: userPosition.longitude
               })
