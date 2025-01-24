@@ -59,8 +59,14 @@ export const PopupModal = () => {
     }) 
   }
 
-  const determineUserCity = ({userAddress}) =>{
-    const city = userAddress.split('市')[0]
+  const determineUserCity = (userAddress) =>{
+    console.log("inside determineCity, userAddress,",userAddress)
+    const countryCity = userAddress.split('市')
+    console.log("inside determineCity, userAddress,",countryCity)
+    const addressCity = countryCity[0].split('台湾')
+    console.log("inside determineCity, addressCity,",addressCity)
+    const city = addressCity[1]
+    console.log("inside determineCity, city,",city)
     return city
   }
 
@@ -71,6 +77,10 @@ export const PopupModal = () => {
       const userAddress = await getCurrentPosition()
       console.log(userAddress)
       const userCity = determineUserCity(userAddress)
+      if (!userCity) {
+      console.error("未能解析使用者城市");
+      return;
+    }
       console.log("使用者城市是", userCity)
 
       if (userCity === "台中" || userCity === "臺中"){
@@ -79,7 +89,7 @@ export const PopupModal = () => {
         navigate('/NotSupportingPage')
       }
     } catch(error){
-      console.error(error)
+      console.error("處理點擊事件時出錯：",error)
     } finally {
       setLoading(false)
     }
