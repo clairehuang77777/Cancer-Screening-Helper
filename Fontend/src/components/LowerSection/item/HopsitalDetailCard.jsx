@@ -1,7 +1,13 @@
 import hospitalData from '../../../assets/data/hospitalData.json' 
 
 export const HospitalDetailCard = ({ district }) => {
-  const filteredHospitalData = hospitalData.filter((hospital) => hospital.District === district)
+  //處理某五個區域沒有"區“問題
+  const districtWithSuffix = 
+      district === '中' || district === '西' || district === '南' || district === '北' || district === '東'
+        ? `${district}區`
+        : district;
+
+  const filteredHospitalData = hospitalData.filter((hospital) => hospital.District === districtWithSuffix)
 
     return (
       <>
