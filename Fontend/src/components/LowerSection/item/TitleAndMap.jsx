@@ -6,6 +6,7 @@ import { UserLngContext } from '../../../UserLngContext';
 export const TitleAndMap = ({district}) => {
   const { UserLat } = useContext(UserLatContext)
   const { UserLng } = useContext(UserLngContext)
+  const [ placeID, setPlaceID] = useState("")
 
   useEffect(() => {
     const districtWithSuffix = 
@@ -50,19 +51,63 @@ export const TitleAndMap = ({district}) => {
           mapId: "46afe031b4dadb46",
         });
 
-        // The marker, positioned at hospital in distr
-        filteredHospitalData.forEach((hospital)=>{
-          const markerPosition = {lat: hospital.Lat, lng: hospital.Lng}
-          new AdvancedMarkerElement({
+      // The marker, display hospital maker
+      filteredHospitalData.forEach((hospital)=>{
+        const markerPosition = {lat: hospital.Lat, lng: hospital.Lng}
+        new AdvancedMarkerElement({
             map: map,
             position: markerPosition,
             title: hospital.Name,
           })
-        });
-      } else {
-        console.error('Google Maps 未加載或沒有篩選到醫院數據');
-      }
-    };
+
+        //send request to get hospital details
+          const request = {
+            placeId: hospital.placeID,
+            fields: ["name", "formatted_address", "international_phone_number", "googleMapsURI"],
+           };
+            
+          const infowindow = new google.maps.InfoWindow();
+          const service = new google.maps.places.PlacesService(map);
+
+          //打request取得地點資訊
+          service.getDetails(request, (place, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK && place) {
+            const marker = new google.maps.Marker({
+                    map,
+                    position: markerPosition,
+                  });
+          
+                  //彈出卡片內容
+                google.maps.event.addListener(marker, "click", () => {
+                const content = document.createElement("div");
+
+                const nameElement = document.createElement("h2");
+                nameElement.textContent = place.name;
+                content.appendChild(nameElement);
+
+                const PhoneNumberElement = document.createElement("p");
+                PhoneNumberElement.textContent = place.international_phone_number;
+                content.appendChild(PhoneNumberElement);
+
+                const placeAddressElement = document.createElement("p");
+                placeAddressElement.textContent = place.formatted_address;
+                content.appendChild(placeAddressElement);
+
+                const placeURL = document.createElement("a");
+                placeURL.href = place.googleMapsUri;  
+                placeURL.textContent = "查看地圖";
+                content.appendChild(placeURL);
+
+
+                infowindow.setContent(content);
+                infowindow.open(map, marker);
+              })
+            }else {
+                console.error('Google Maps 未加載或沒有篩選到醫院數據');
+            }
+      });
+    })
+  }}
 
   loadGoogleMaps();
   }, [UserLat, UserLng]);
