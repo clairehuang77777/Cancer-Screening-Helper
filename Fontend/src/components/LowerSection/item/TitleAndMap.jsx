@@ -56,7 +56,7 @@ export const TitleAndMap = ({district}) => {
                 // content.appendChild(phoneNumberElement);
 
                 const placeURL = document.createElement("a");
-                placeURL.href = place.googleMapsUri || "#";
+                placeURL.href = place.url || "#";
                 placeURL.textContent = "查看地圖";
                 content.appendChild(placeURL);
       return content;
