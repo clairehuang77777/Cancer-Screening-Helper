@@ -17,6 +17,14 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* 全局樣式：修改 Google Maps InfoWindow 外層樣式 */
+.gm-style-iw {
+  max-height: 150px !important;
+  /* 限制高度 */
+  overflow-y: auto !important;
+  /* 啟用垂直滾動 */
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
