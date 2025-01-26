@@ -56,7 +56,7 @@ export const TitleAndMap = ({district}) => {
                 // content.appendChild(phoneNumberElement);
 
                 const placeURL = document.createElement("a");
-                placeURL.href = place.url || "#";
+                placeURL.href = place.url || place.website || "#";
                 placeURL.textContent = "查看地圖";
                 content.appendChild(placeURL);
       return content;
@@ -105,7 +105,7 @@ export const TitleAndMap = ({district}) => {
           try {
             const request = {
               placeId: hospital.placeID,
-              fields: ["name", "formatted_address", "international_phone_number", "geometry", "url"],
+              fields: ["name", "formatted_address", "international_phone_number", "geometry", "url", "website"],
             };
              console.log("發送get place detail請求")
 
