@@ -1,12 +1,17 @@
 import hospitalData from '../../../assets/data/hospitalData.json' 
-import { useContext , useEffect, useState } from 'react';
+import { useContext , useEffect, useState, useRef } from 'react';
 import { UserLatContext } from '../../../UserLatContext';
 import { UserLngContext } from '../../../UserLngContext';
+import { UserClickHospitalContext } from '../../../UserClickHospitalContext';
 
 export const TitleAndMap = ({district}) => {
   const { UserLat } = useContext(UserLatContext)
   const { UserLng } = useContext(UserLngContext)
   const [ placeID, setPlaceID] = useState("")
+  const { UserClickHospital, SetUserClickHospital } = useContext(UserClickHospitalContext)
+  const markerTitleRef = useRef(null) //宣告markerTitleRef
+
+
 
   useEffect(() => {
     const districtWithSuffix = 
@@ -96,18 +101,20 @@ export const TitleAndMap = ({district}) => {
         const markerElement = marker.element; // AdvancedMarkerElement 的 DOM 節點
         markerElement.style.pointerEvents = "auto"; // 啟用 pointer-events
         console.log("啟用 pointer-events")
-
+        
         const infowindow = new google.maps.InfoWindow();
 
         console.log("開始監聽事件")
          marker.addListener("click", async () => {
           console.log("marker被點擊")
+          markerTitleRef.current = marker.title //更新ref
+          console.log(`${marker.title}已更新`)
           try {
             const request = {
               placeId: hospital.placeID,
               fields: ["name", "formatted_address", "international_phone_number", "geometry", "url", "website"],
             };
-             console.log("發送get place detail請求")
+            //  console.log("發送get place detail請求")
 
             const place = await new Promise((resolve, reject) => {
               service.getDetails(request, (place, status) => {
@@ -118,9 +125,12 @@ export const TitleAndMap = ({district}) => {
                 }
               });
             });
-            console.log("把place內容放進框框裡")
+            // console.log("把place內容放進框框裡")
             infowindow.setContent(createInfoWindowContent(place));
             infowindow.open(map, marker);
+            console.log(marker.title)
+            console.log(markerTitleRef.current)
+            SetUserClickHospital(markerTitleRef.current)
           } catch (error) {
             console.error("無法加載詳細資訊", error);
           }

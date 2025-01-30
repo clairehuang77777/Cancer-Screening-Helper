@@ -17,7 +17,7 @@ export const NearByPage = () => {
     const words = userAddress.split('中市');
     const district = words[1].split('區');
     UsersDistrict = district[0]? `${district[0]}`:"未知區"
-    console.log(UsersDistrict)
+    // console.log(UsersDistrict)
   } else {
     console.error("useraddress為空")
   }

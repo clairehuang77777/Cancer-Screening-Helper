@@ -131,7 +131,7 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 }
 
 .Small-lower-section-button-area {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 //Lower-Section-Item-H3-text
@@ -146,8 +146,8 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 .cancer2-img,
 .cancer3-img,
 .cancer4-img {
-  width: 154px;
-  height: 154px;
+  width: 120px;
+  height: 120px;
   margin: 3px;
   border-radius: 10px;
   box-shadow: 1px 1px 7px 1px lightgrey;
@@ -167,8 +167,8 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 
 //ProgressBar
 .lower-section-progress-bar-area {
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 //formPage- lowerSection
@@ -219,8 +219,8 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 }
 
 .lower-section-progress-bar-area {
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .lower-section-button-area {
@@ -246,7 +246,7 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 
 .question-2 {
   color: black;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .question-2-question{
@@ -273,7 +273,7 @@ input[type="radio"] {
 }
 
 .checkBtn {
-  margin-top: 30px;
+  // margin-top: 30px;
   width: 332px;
   height: 50px;
   border: 0px;
@@ -294,8 +294,13 @@ input[type="radio"] {
 }
 
 .lower-section-result-area-four-box {
-  margin-top: 60px;
-  margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px
 }
 
 
@@ -303,8 +308,8 @@ input[type="radio"] {
 .cancer2,
 .cancer3,
 .cancer4{
-  width: 154px;
-  height: 154px;
+  width: 120px;
+  height: 120px;
 
   &.checked {
     border: 3px solid $primary-blue;
@@ -485,7 +490,7 @@ input[type="radio"] {
 
 .pop-up-message {
   position: absolute;
-  top: 250px;
+  top: 220px;
   left: 50%;
     /* 定位到整個畫面的 50% */
     transform: translateX(-50%);

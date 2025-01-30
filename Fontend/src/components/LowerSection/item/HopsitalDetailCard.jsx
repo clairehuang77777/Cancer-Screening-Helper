@@ -1,4 +1,6 @@
 import hospitalData from '../../../assets/data/hospitalData.json' 
+import { useContext, useEffect } from 'react';
+import { UserClickHospitalContext } from '../../../UserClickHospitalContext';
 
 export const HospitalDetailCard = ({ district }) => {
   //處理某五個區域沒有"區“問題
@@ -8,11 +10,44 @@ export const HospitalDetailCard = ({ district }) => {
         : district;
 
   const filteredHospitalData = hospitalData.filter((hospital) => hospital.District === districtWithSuffix)
+  const { UserClickHospital, SetUserClickHospital } = useContext(UserClickHospitalContext)
+  
+  console.log(`拿到更新值 ${UserClickHospital}`)
+
+  
+  useEffect(()=>{
+  // 如果 UserClickHospital 為空，直接 return
+  if (!UserClickHospital) return;
+
+  //透過更新值名稱, 找到對應的hospitalID
+  const foundHospital = filteredHospitalData.find((hospital)=> hospital.Name === UserClickHospital)
+
+  if (!foundHospital) {
+    console.warn("找不到對應的醫院:", UserClickHospital);
+    return; // 找不到就直接 return，避免報錯
+  }
+
+  console.log(foundHospital)
+  console.log(foundHospital.ID)
+  const selectedID = foundHospital.ID
+
+  //當selectedID有變動時
+  //透過scrolltoView說要滑動到這個id
+  //加入延遲，確保DOM已經渲染完成
+  setTimeout(()=> {
+    const element = document.getElementById(selectedID)
+    element?.scrollIntoView({
+        behavior: 'smooth'
+      })
+    },100)
+  },[UserClickHospital, filteredHospitalData])
+  
+
 
     return (
       <>
       {filteredHospitalData.map((hospital, index)=> (
-      <div key={index} className="nearByHospital-detail-card">
+      <div key={index} className="nearByHospital-detail-card" id={hospital.ID}>
           <div className="hosptialName">{hospital.Name}</div>
           <div className="hosptialPhone">{hospital.Phone}</div>
           <div className="hosptialAddress">{hospital.Address}</div>

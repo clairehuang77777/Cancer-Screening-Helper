@@ -11,12 +11,14 @@ import { UserAddressContext } from './UserAddressContext'
 import { UserLngContext } from './UserLngContext'
 import { UserLatContext } from './UserLatContext'
 import { NotSupportingPage } from './page/NotSupportingPage'
+import { UserClickHospitalContext } from './UserClickHospitalContext'
 
 function App() {
 const [type, SetType] = useState('')
 const [userAddress, SetUserAddress] = useState('')
 const [UserLng, SetUserLng] = useState('')
 const [UserLat, SetUserLat] = useState('')
+const [UserClickHospital, SetUserClickHospital] = useState('')
 
   return (
     <>
@@ -24,6 +26,7 @@ const [UserLat, SetUserLat] = useState('')
     <UserAddressContext.Provider value ={{userAddress,SetUserAddress}}>
     <UserLngContext.Provider value={{UserLng, SetUserLng}}>
     <UserLatContext.Provider value={{UserLat,SetUserLat}}>
+    <UserClickHospitalContext.Provider value={{UserClickHospital, SetUserClickHospital}}>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<MainPage/>}></Route>
@@ -33,6 +36,7 @@ const [UserLat, SetUserLat] = useState('')
             <Route path="/NotSupportingPage" element={<NotSupportingPage/>}></Route>
         </Routes>
       </BrowserRouter>
+    </UserClickHospitalContext.Provider>
     </UserLatContext.Provider>
     </UserLngContext.Provider>
     </UserAddressContext.Provider>
