@@ -12,9 +12,10 @@ export const NearByPage = () => {
   //初始化UserDistrict
   let UsersDistrict = "未知區";
 
+  //**spilt的邏輯要能包含台北市 */
   //把取得的資料只取出區域>>西區
   if(userAddress){
-    const words = userAddress.split('中市');
+    const words = userAddress.split('市');
     const district = words[1].split('區');
     UsersDistrict = district[0]? `${district[0]}`:"未知區"
     // console.log(UsersDistrict)

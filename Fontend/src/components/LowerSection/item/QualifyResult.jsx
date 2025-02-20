@@ -51,14 +51,23 @@ export const QualifyResult = () => {
         以您的年齡及性別，你能做的癌症篩檢項目為：
     </div>
       <div className="lower-section-result-area-four-box">
-        {/* {oralCancer? <img className="checkicon1" src="/checkicon.png"></img>:<></>} */}
-        <img className={clsx("cancer1", {checked: oralCancer})} src="/cancer1.png"></img>
-        {/* {breastCancer? <img className="checkicon2" src="/checkicon.png"></img>:<></>} */}
-        <img className={clsx("cancer2", {checked: breastCancer})} src="/cancer2.png"></img>
-        {/* {cervixCancer? <img className="checkicon3" src="/checkicon.png"></img>:<></>} */}
-        <img className={clsx("cancer3", {checked: cervixCancer})} src="/cancer3.png"></img>
-        {/* {colonCancer? <img className="checkicon4" src="/checkicon.png"></img>:<></>} */}
-        <img className={clsx("cancer4", {checked: colonCancer})} src="/cancer4.png"></img>
+        <div className="cancer1-area">
+          <img className={clsx("cancer1", {checked: oralCancer})} src="/cancer1.png"></img>
+          <img className="checkicon1" src="/checkicon.png"></img>
+        </div>
+        <div className="cancer2-area">
+          <img className={clsx("cancer2", {checked: breastCancer})} src="/cancer2.png"></img>
+          <img className="checkicon2" src="/checkicon.png"></img>
+        </div>
+        <div className="cancer3-area">
+          <img className={clsx("cancer3", {checked: cervixCancer})} src="/cancer3.png"></img>
+          <img className="checkicon3" src="/checkicon.png"></img>
+        </div>
+        <div className="cancer3-area">
+          <img className={clsx("cancer4", {checked: colonCancer})} src="/cancer4.png"></img>
+          <img className="checkicon4" src="/checkicon.png"></img>
+        </div>
+        
       </div>
       <button className="NearByBtn" type="submit" 
       onClick={()=>setShowPopUp(true)}>查看鄰近醫院 </button>

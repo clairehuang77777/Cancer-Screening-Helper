@@ -83,7 +83,7 @@ export const PopupModal = () => {
     }
       console.log("使用者城市是", userCity)
 
-      if (userCity === "台中" || userCity === "臺中"){
+      if (userCity === "台中" || userCity === "臺中" || userCity === "台北" || userCity === "臺北" ){
         navigate('/NearByPage')
       } else {
         navigate('/NotSupportingPage')

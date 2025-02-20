@@ -16,7 +16,7 @@ export const NoSupportLayout = ({ upperNavigation}) => {
           <img className="sorryImg" src="/sorry.png"></img>
         </div>
         <div className="noSupportText">
-          <p>很抱歉！<br></br>目前只支援台中地區！</p>
+          <p>很抱歉！<br></br>目前只支援台北及台中地區！</p>
         </div>
         <button className="BacktoTopBtn"  
       onClick={()=>navigate("/")}>返回首頁 </button>
