@@ -1,6 +1,6 @@
 export const NearByLayout = ({ upperNavigation, TitleAndMapArea, DetailCardArea}) => {
   return (
-    <div className="background-container">
+    <div className="background-container-small">
       <div className="small-layout-upper-section">
         <div className="upper-section-navigation">
           {upperNavigation}

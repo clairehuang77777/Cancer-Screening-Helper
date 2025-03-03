@@ -13,13 +13,44 @@ $mobile-h4-fontsize: 12px;
 //box-shadow:
 $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 
-.background-container {
+.logo-text {
+  font-weight: bold;
+}
+
+.logo-text {
+  color: white;
+  margin-top: 16px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.background-container-big {
   width: 100vw;
   // height: 896px;
   background-color: $primary-blue;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
+
+.upper-section-textarea-title-area{
+  display: none;
+}
+
+.upper-section-textarea-text-tp,
+.upper-section-textarea-text-tc,
+.upper-section-textarea-title-source,
+.upper-section-textarea-text-op {
+  display: none;
+}
+
+.upper-section-textarea-text-age{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+
+
 
 //BigHeaderLayout 版型1
 .big-layout-upper-section {
@@ -29,6 +60,7 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 .upper-section-navigation {
   height: 66px;
   display: flex;
+  align-items: center;
 }
 
 .upper-section-textarea {
@@ -50,9 +82,9 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 }
 
 //smallHeaderLayout 版型2
-.background-container {
+.background-container-small {
   width: 100vw;
-  height: 844px;
+  height: 100vh;
   background-color: $primary-blue;
   display: flex;
   flex-direction: column;
@@ -86,7 +118,7 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 .website-Logo-Icon {
   width: 24px;
   height: 24px;
-  margin-top: 22px;
+  // margin-top: 22px;
   margin-left: 20px;
 }
 
@@ -95,6 +127,7 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
   color: $white;
   margin-left: 30px;
   margin-right: 30px;
+  text-align: start;
 }
 
 .upper-section-textarea-hi {
@@ -112,6 +145,9 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
   text-align: start;
 }
 
+.upper-section-textarea-text-map{
+  font-size: 15px;
+}
 
 //Small-lower-Layout
 .Small-lower-section-top-area {
@@ -120,7 +156,9 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
   margin-top: 20px;
   display: flex;
   justify-content: flex-start;
-  padding-left: 30px;
+  // padding-left: 30px;
+  font-weight: bold;
+  display: table-row;
 }
 
 .Small-lower-section-middle-area{
@@ -162,6 +200,7 @@ $btn-box-shadow: 2px 2px 7px 2px lightgrey;
 
 //LetGoBtn
 .letGoBtn {
+  margin-top:0px;
   width: 332px;
   height: 50px;
   border: 0px;
@@ -329,8 +368,8 @@ input[type="radio"] {
   height: 120px;
 
   &.checked {
-    border: 3px solid $primary-blue;
-    border-radius: 15px;
+    border: 5px solid $primary-blue;
+    border-radius: 25px;
     box-shadow: 0.6px 1px 7px 6px #ccc;
     margin-right: 6px;
   }
@@ -358,8 +397,8 @@ input[type="radio"] {
 
 .checkicon1{
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 10px;
+  top: 10px;
   width: 30px;
   height: 30px;
   display: none;
@@ -371,8 +410,8 @@ input[type="radio"] {
 
 .checkicon2 {
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 10px;
+  top: 10px;
   width: 30px;
   height: 30px;
   display: none;
@@ -384,8 +423,8 @@ input[type="radio"] {
 
 .checkicon3 {
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 10px;
+  top: 10px;
   width: 30px;
   height: 30px;
   display: none;
@@ -397,8 +436,8 @@ input[type="radio"] {
 
 .checkicon4 {
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 10px;
+  top: 10px;
   width: 30px;
   height: 30px;
   display: none;
@@ -560,7 +599,10 @@ input[type="radio"] {
   }
 }
 
-
+.Small-lower-section-middle-area{
+  // grid-template-columns: auto auto auto auto;
+  // grid-template-rows: auto;
+}
 //PopupModal
 .cover-image {
   position: absolute;
@@ -783,38 +825,140 @@ input[type="radio"] {
   flex-direction: column;
 }
 
+.font-size-h2-text {
+  font-size: $mobile-h2-fontsize;
+}
+
+.Fill-Icon,
+.location-Icon,
+.check-Icon{
+  width: 15px;
+  height: 15px;
+  padding-right: 10px;
+  margin-top: 3px;
+}
+
+.url{
+  color: white;
+}
+
+.cancer1-div,
+.cancer2-div,
+.cancer3-div,
+.cancer4-div{
+  width: 125px;
+  height: 125px;
+}
+
+
+/*平板和桌機版樣式*/
 @media screen and (min-width: 768px) {
   #root {
     margin-left: 0px;
     margin-right: 0px;
   }
-  
+
+    .Fill-Icon,
+    .location-Icon,
+    .check-Icon {
+      width: 20px;
+      height: 20px;
+      padding-right: 10px;
+      margin-top: 3px;
+    }
+
+  .background-container-big{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .background-container-small {
+    width: 100vw;
+    height: 100vh;
+    background-color: $primary-blue;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .big-layout-lower-section{
+    margin-top: 66px;
+    height: calc(100vh - 66px);
+    width: calc(100vw - 400px);
+  }
+
   .website-Logo-Icon{
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .big-layout-upper-section{
     height: 420px;
   }
 
-  .upper-section-textarea-hi{
-    font-size: $mobile-h0-fontsize;
+  .upper-section-textarea{
+    width: 440px;
+    margin-top: 100px;
   }
 
-  .upper-section-textarea-text{
-    font-size: $mobile-h1-fontsize;
+  .upper-section-textarea-title-use,
+  .upper-section-textarea-title-area,
+  .upper-section-textarea-title-source
+  {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+
+  .upper-section-textarea-hi{
+    margin-top: 100px;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .upper-section-textarea-title-area{
+    display: block;
+  }
+
+  .upper-section-textarea-text-age,
+  .upper-section-textarea-text-map,
+  .upper-section-textarea-text-tp,
+  .upper-section-textarea-text-tc,
+  .upper-section-textarea-text-op
+  {
+    display: block;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 4px;
+    align-items: center;
+    margin-bottom: 0px;
+    height: 40px;
+    padding-left: 10px;
+  }
+
+  .url{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: white;
+  }
+
+  .Small-lower-section-button-area{
+    margin-top: 0px;
   }
 
   .font-size-h2-text{
-    font-size: $mobile-h1-fontsize;
+    display: block;
+    font-size: 20px;
+    margin-top: 100px;
   }
 
   .cancer1-img,
   .cancer2-img,
   .cancer3-img,
   .cancer4-img{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-right:10px;
   }
 
@@ -825,6 +969,16 @@ input[type="radio"] {
     margin-top: 50px;
   }
 
+  .letGoBtn{
+    margin-top: 250px;
+  }
+
+  .Small-lower-section-middle-area{
+    margin-top: 100px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 100px;
+  }
   .progress-bar-start{
     background-image: url("/bigProgress@3x.png");
     width:921px;

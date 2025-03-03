@@ -52,19 +52,19 @@ export const QualifyResult = () => {
     </div>
       <div className="lower-section-result-area-four-box">
         <div className="cancer1-area">
-          <img className={clsx("cancer1", {checked: oralCancer})} src="/cancer1.png"></img>
+          <img className={clsx("cancer1", {checked: oralCancer})} src="/Group33.svg"></img>
           <img className="checkicon1" src="/checkicon.png"></img>
         </div>
         <div className="cancer2-area">
-          <img className={clsx("cancer2", {checked: breastCancer})} src="/cancer2.png"></img>
+          <img className={clsx("cancer2", {checked: breastCancer})} src="/Group30.svg"></img>
           <img className="checkicon2" src="/checkicon.png"></img>
         </div>
         <div className="cancer3-area">
-          <img className={clsx("cancer3", {checked: cervixCancer})} src="/cancer3.png"></img>
+          <img className={clsx("cancer3", {checked: cervixCancer})} src="/Group31.svg"></img>
           <img className="checkicon3" src="/checkicon.png"></img>
         </div>
         <div className="cancer3-area">
-          <img className={clsx("cancer4", {checked: colonCancer})} src="/cancer4.png"></img>
+          <img className={clsx("cancer4", {checked: colonCancer})} src="/Group32.svg"></img>
           <img className="checkicon4" src="/checkicon.png"></img>
         </div>
         

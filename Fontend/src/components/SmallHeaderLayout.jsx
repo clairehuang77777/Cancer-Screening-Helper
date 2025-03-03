@@ -1,6 +1,6 @@
 export const SmallHeaderLayout = ({upperNavigation, lowerSectionProgressBarArea,lowerSectionButtonArea }) => {
   return (
-    <div className="background-container">
+    <div className="background-container-small">
       <div className="small-layout-upper-section">
         <div className="upper-section-navigation">
         {upperNavigation}

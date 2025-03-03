@@ -1,7 +1,7 @@
 export const BigHeaderLayout =({upperNavigation, upperSectionArea, SmallLowerSectionTopArea, SmallLowerSectionMiddleArea,SmallLowerSectionButtonArea}) =>{
   return (
     <>
-    <div className="background-container">
+    <div className="background-container-big">
       <div className="big-layout-upper-section">
         <div className="upper-section-navigation">
           {upperNavigation}

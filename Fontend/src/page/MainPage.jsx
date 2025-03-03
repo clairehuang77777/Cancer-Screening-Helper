@@ -6,7 +6,7 @@ import { FourGridImage } from "../components/LowerSection/item/FourGridImage"
 import { LetGoBtn } from "../components/LowerSection/item/LetGoBtn"
 
 export const MainPage = () =>{
-  const text = "政府補助免費篩檢："
+  const text = "政府補助免費篩檢類型"
   
   return (
     <BigHeaderLayout upperNavigation={<Header/>} upperSectionArea={<UpperSectionText/>} SmallLowerSectionTopArea={<FontSizeH2Text text={text}/>} SmallLowerSectionMiddleArea={<FourGridImage/>} SmallLowerSectionButtonArea={<LetGoBtn/>}/>
