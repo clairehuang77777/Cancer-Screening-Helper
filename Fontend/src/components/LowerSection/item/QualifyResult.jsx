@@ -4,10 +4,12 @@ import { useState } from "react"
 import clsx from "clsx"
 import { TypeContext } from "../../../TypeContext"
 import { useEffect } from "react"
+import { ProgressBarChangeContext } from "../../../ProgressBarChangeContext"
 
 export const QualifyResult = () => {
   const {setShowPopUp} = useContext(PopUpContext)
   const {type} = useContext(TypeContext)
+  const {secondStepStatus, setSecondStepStatusStepStatus} = useContext(ProgressBarChangeContext)
   
   //調整可做篩檢結果的CSS變數
   const [oralCancer, setOralCancer] = useState(false)
@@ -45,6 +47,11 @@ export const QualifyResult = () => {
 },[type])
 //只有當type改變才會執行這段邏輯
 
+  function handleNearByClick(){
+    setShowPopUp(true),
+    setSecondStepStatusStepStatus(true)
+  }
+
   return (
     <>
     <div className="lower-section-result-area-text">
@@ -70,7 +77,7 @@ export const QualifyResult = () => {
         
       </div>
       <button className="NearByBtn" type="submit" 
-      onClick={()=>setShowPopUp(true)}>查看鄰近醫院 </button>
+      onClick={handleNearByClick}>查看鄰近醫院 </button>
     </>
   )
 }

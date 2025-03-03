@@ -1,5 +1,5 @@
 import { Header } from "../components/Header/Header"
-import { ProgressBarEnd } from "../components/LowerSection/item/ProgressBarEnd"
+import { ProgressBar } from "../components/LowerSection/item/ProgressBar"
 import { SmallHeaderLayout } from "../components/SmallHeaderLayout"
 import { QualifyResult } from "../components/LowerSection/item/QualifyResult"
 import { PopupModal } from "../components/Modal/PopupModal"
@@ -13,7 +13,7 @@ export const ResultPage = () => {
     <>
     <PopUpContext.Provider value={{showPopUp, setShowPopUp}}>
       <PopupModal/>
-      <SmallHeaderLayout upperNavigation={<Header/>} lowerSectionProgressBarArea={<ProgressBarEnd/>} lowerSectionButtonArea={<QualifyResult/>} />
+      <SmallHeaderLayout upperNavigation={<Header/>} lowerSectionProgressBarArea={<ProgressBar/>} lowerSectionButtonArea={<QualifyResult/>} />
     </PopUpContext.Provider>
     </>
   )

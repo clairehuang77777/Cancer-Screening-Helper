@@ -1,4 +1,4 @@
-export const NearByLayout = ({ upperNavigation, TitleAndMapArea, DetailCardArea}) => {
+export const NearByLayout = ({ upperNavigation, TitleAndMapArea, DetailCardArea, ProgressBarMap}) => {
   return (
     <div className="background-container-small">
       <div className="small-layout-upper-section">
@@ -6,7 +6,9 @@ export const NearByLayout = ({ upperNavigation, TitleAndMapArea, DetailCardArea}
           {upperNavigation}
         </div>
       </div>
-
+      <div className="progress-bar-map">
+          {ProgressBarMap}
+      </div>
       <div className="small-layout-lower-section-map">
         <div className="nearByHospital-text">
           {TitleAndMapArea}

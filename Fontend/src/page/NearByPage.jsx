@@ -5,6 +5,7 @@ import { TitleAndMap } from "../components/LowerSection/item/TitleAndMap"
 //取得用戶位置
 import { useContext } from "react"
 import { UserAddressContext } from "../UserAddressContext"
+import { ProgressBar } from "../components/LowerSection/item/ProgressBar"
 
 export const NearByPage = () => {
   const {userAddress} = useContext(UserAddressContext)
@@ -25,6 +26,6 @@ export const NearByPage = () => {
 
 
   return (
-    <NearByLayout upperNavigation={<Header/>} TitleAndMapArea={<TitleAndMap district={UsersDistrict}/>} DetailCardArea={<HospitalDetailCard district={UsersDistrict}/>} />
+    <NearByLayout upperNavigation={<Header/>} ProgressBarMap={<ProgressBar/>}TitleAndMapArea={<TitleAndMap district={UsersDistrict}/>} DetailCardArea={<HospitalDetailCard district={UsersDistrict}/>} />
   )
 }

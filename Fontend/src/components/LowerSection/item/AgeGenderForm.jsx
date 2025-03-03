@@ -3,11 +3,13 @@ import { TypeContext } from "../../../TypeContext"
 import { useState } from "react"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { ProgressBarChangeContext } from "../../../ProgressBarChangeContext"
 
 export const AgeGenderForm = () => {
   const { type, SetType } = useContext(TypeContext)
   const [age, setAge] = useState('')
   const [gender, setGender] = useState('')
+  const {firstStepStatus, setFirstStepStatus} = useContext(ProgressBarChangeContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -77,7 +79,7 @@ export const AgeGenderForm = () => {
             </label>
           </div>
       </div>
-      <button className="checkBtn" type="submit" >查看可篩檢項目</button>
+      <button className="checkBtn" type="submit" onClick={()=>setFirstStepStatus(true)} >查看可篩檢項目</button>
     </form>
   )
 }

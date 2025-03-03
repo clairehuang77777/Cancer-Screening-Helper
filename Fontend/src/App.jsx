@@ -12,6 +12,7 @@ import { UserLngContext } from './UserLngContext'
 import { UserLatContext } from './UserLatContext'
 import { NotSupportingPage } from './page/NotSupportingPage'
 import { UserClickHospitalContext } from './UserClickHospitalContext'
+import { ProgressBarChangeContext} from "./ProgressBarChangeContext"
 
 function App() {
 const [type, SetType] = useState('')
@@ -19,9 +20,12 @@ const [userAddress, SetUserAddress] = useState('')
 const [UserLng, SetUserLng] = useState('')
 const [UserLat, SetUserLat] = useState('')
 const [UserClickHospital, SetUserClickHospital] = useState('')
+const [firstStepStatus, setFirstStepStatus] = useState(false)
+const [secondStepStatus, setSecondStepStatusStepStatus] = useState(false)
 
   return (
     <>
+    <ProgressBarChangeContext.Provider value={{firstStepStatus, setFirstStepStatus, secondStepStatus, setSecondStepStatusStepStatus}}>
     <TypeContext.Provider value={{type, SetType}}>
     <UserAddressContext.Provider value ={{userAddress,SetUserAddress}}>
     <UserLngContext.Provider value={{UserLng, SetUserLng}}>
@@ -40,7 +44,8 @@ const [UserClickHospital, SetUserClickHospital] = useState('')
     </UserLatContext.Provider>
     </UserLngContext.Provider>
     </UserAddressContext.Provider>
-    </TypeContext.Provider>        
+    </TypeContext.Provider>   
+    </ProgressBarChangeContext.Provider>     
     </>
   )
 }
